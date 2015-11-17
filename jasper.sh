@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "~~~~~Download Jasper~~~~~"
+cd ~
 git clone https://github.com/jasperproject/jasper-client.git jasper
 echo "Done!"
 
@@ -9,11 +10,11 @@ sudo pip install --upgrade setuptools
 echo "Done!"
 
 echo "~~~~~Requirements~~~~~"
-sudo pip install -r jasper/client/requirements.txt
+sudo pip install -r ~/jasper/client/requirements.txt
 echo "Done!"
 
 echo "~~~~~Change mode~~~~~"
-chmod +x jasper/jasper.py
+chmod +x ~/jasper/jasper.py
 echo "Done!"
 
 echo "~~~~~Update~~~~~"
@@ -25,7 +26,7 @@ sudo sed -i '$a network={\nssid="bruce"\nproto=RSN\nkey_mgmt=WPA-PSK\npairwise=C
 echo "Done!"
 
 echo "~~~~~Move files~~~~~"
-cd test_jasper/
+cd ~/test_jasper/
 mv Navigation.py Scan.py Shutdown.py ~/jasper/client/modules
 echo "Done"
 
@@ -34,4 +35,7 @@ cd ~/jasper/client
 python populate.py
 echo "Done!"
 
-cd
+echo "~~~~~Start Jasper~~~~~"
+cd ~/jasper
+./jasper.py
+
