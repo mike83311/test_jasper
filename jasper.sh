@@ -20,8 +20,17 @@ echo "~~~~~Update~~~~~"
 sudo apt-get update
 echo "Done!"
 
+echo "~~~~~Setting Wi-Fi~~~~~"
+sudo sed -i '$a network={\nssid="bruce"\nproto=RSN\nkey_mgmt=WPA-PSK\npairwise=CCMP\n#auth_alg=OPEN\npsk="29932154"\n}' /etc/wpa_supplicant/wpa_supplicant.conf
+echo "Done!"
+
+echo "~~~~~Move files~~~~~"
+cd test_jasper/
+mv Navigation.py Scan.py Shutdown.py ~/jasper/client/modules
+echo "Done"
+
 echo "~~~~~Profile setting~~~~~"
-cd jasper/client
+cd ~/jasper/client
 python populate.py
 echo "Done!"
 
