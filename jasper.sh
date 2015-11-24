@@ -35,8 +35,8 @@ mv Navigation.py Position.py Shutdown.py ~/jasper/client/modules
 echo "Done"
 
 echo "~~~~~Change Mode~~~~~"
-chmod +x scan_result.sh
-chmod +x test_scan.sh
+chmod +x ~/test_jasper/scan/scan_result.sh
+chmod +x ~/test_jasper/scan/test_scan.sh
 echo "Done!"
 
 echo "~~~~~Profile setting~~~~~"
