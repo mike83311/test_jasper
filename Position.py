@@ -3,7 +3,7 @@ import random
 import re
 import subprocess,sys
 
-WORDS = ["POSITIONING"]
+WORDS = ["POSITION"]
 
 def handle(text, mic, profile):
     """
@@ -31,4 +31,4 @@ def isValid(text):
         Arguments:
         text -- user-input, typically transcribed speech
     """
-    return bool(re.search(r'\b(positioning)\b', text, re.IGNORECASE))
+    return bool(re.search(r'\b(position)\b', text, re.IGNORECASE))
