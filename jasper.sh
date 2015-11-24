@@ -21,6 +21,10 @@ echo "~~~~~Update~~~~~"
 sudo apt-get update
 echo "Done!"
 
+echo "~~~~~Upgrade~~~~~"
+sudo apt-get upgrade -y
+echo "Done!"
+
 echo "~~~~~Setting Wi-Fi~~~~~"
 sudo sed -i '$a network={\nssid="HCL-404"\nproto=RSN\nkey_mgmt=WPA-PSK\npairwise=CCMP\n#auth_alg=OPEN\npsk="rup453184xu/6"\n}' /etc/wpa_supplicant/wpa_supplicant.conf
 echo "Done!"
@@ -29,6 +33,11 @@ echo "~~~~~Move files~~~~~"
 cd ~/test_jasper/
 mv Navigation.py Position.py Shutdown.py ~/jasper/client/modules
 echo "Done"
+
+echo "~~~~~Change Mode~~~~~"
+chmod +x scan_result.sh
+chmod +x test_scan.sh
+echo "Done!"
 
 echo "~~~~~Profile setting~~~~~"
 cd ~/jasper/client
